@@ -1,0 +1,20 @@
+LIGHTS OUT
+
+The Game
+Lights Out is a logic/puzzle game, played on a gird of individual lights, which can either be lit or unlit. The puzzle is won when when all of the lights are turned off. 
+
+You can click on a cell to toggle that light — but it also toggles the light above it, to the left of it, to the right of it, and below it. (Cells on an edge or in the corner won’t flip as many lights, since they are missing some neighbors).
+
+CODE
+Built from three components:
+
+Component Design
+App
+It just renders the Board component.
+
+Board
+The most sophisticated component. It will holds the state that represents the in-memory grid of true/false for lights-on/off. Since the state for the board lives here, this is also were the setState() calls are made — and therefore, all the functions that call setState().
+
+Cell
+A simpler component. This simply renders a <div>, where the CSS classes will indicate whether this cell is lit or unlit. This is what the user clicks on — it calls a function it receives from the Board, which then updates the state.
+When the game is won, the board is not shown, but a simple “You Won!” message shows in its place.
